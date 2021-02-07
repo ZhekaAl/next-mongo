@@ -1,5 +1,6 @@
 import { connectToDatabase } from "../util/mongodb";
 
+
 export default function Movies({ movies }) {
   return (
     <div>
@@ -7,6 +8,7 @@ export default function Movies({ movies }) {
       <p>
         <small>(According to Metacritic)</small>
       </p>
+
       <ul>
         {movies.map((movie) => (
           <li>
