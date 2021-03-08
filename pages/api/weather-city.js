@@ -1,4 +1,32 @@
+//import Cors from 'cors'
+import NextCors from 'nextjs-cors';
+
+
+
 import { connectToDatabase } from "../../util/mongodb";
+
+
+// Initializing the cors middleware
+const cors = {
+  methods: ['GET', 'HEAD'],
+  origin: '*',
+}
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+// function runMiddleware(req, res, fn) {
+//   return new Promise((resolve, reject) => {
+//     fn(req, res, (result) => {
+//       if (result instanceof Error) {
+//         return reject(result)
+//       }
+
+//       return resolve(result)
+//     })
+//   })
+// }
+
+
 
 const { WEATHER_API_KEY } = process.env
 
@@ -28,7 +56,10 @@ const getWeatherListIsValid = (weatherList)=>{
 export default async (req, res) => {
 
     
-  
+  //await runMiddleware(req, res, cors);
+  await NextCors(req, res, cors);
+
+
   const id = +req.query.id;
   console.log("id=",id);
 

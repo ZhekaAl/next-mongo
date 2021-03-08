@@ -7,8 +7,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "mongodb": "^3.5.9",
     "next": "latest",
+    "nextjs-cors": "^1.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
